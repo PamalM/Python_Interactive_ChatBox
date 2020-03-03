@@ -4,20 +4,6 @@ import string
 from chatterbot import ChatBot
 from chatterbot.trainers import ListTrainer
 from chatterbot.trainers import ChatterBotCorpusTrainer
-#Class to represent our celebrity chat agent.
-class Celebrity:
-
-    #Constructor method; Some attributes to describe our celebrity.
-    def __init__(self, name, age, birthday, height, career):
-        self.name = name
-        self.age = age
-        self.birthday = birthday
-        self.height = height
-        self.career = career
-
-#Create a celebrity object for Kevin Hart.
-kevinHart = Celebrity("Kevin Hart", 40, "07-06-1979", "1.63m", "standup comedian & actor")
-
 
 
 my_bot = ChatBot(name='PyBot', read_only=True,
