@@ -11,4 +11,6 @@ https://drive.google.com/file/d/1U8VQVHLJl651gtyjKrn1gWDnLKBJmbE0/view?usp=shari
 In order to execute the program, please download the project either as a .zip or directly as a GitHub repository into your compiler. Please run the **main.py** script to bootup the program. 
 
 *This project utilizes ChatterBot; [Python 3.8.1]*
+Contributions: Ryan Hughes; The link to his repository for your viewing. 
+https://github.com/rryanh/chatterbot_working.git
 
