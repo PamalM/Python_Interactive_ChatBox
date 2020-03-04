@@ -1,7 +1,11 @@
 from chatterbot.trainers import ListTrainer
+from chatterbot.trainers import ChatterBotCorpusTrainer
 from datetime import datetime
 from chatterbot import ChatBot
 import logging
+import random
+import re
+import os
 
 #Method fetches and displays the current date and time for chat start/stop points.
 def displayDateTime():
@@ -86,17 +90,26 @@ print("\nChatBox Initializing... ")
 print("Please allow Chatbot training to perform.")
 displayLineSeperator()
 
-#Open .txt file to populate/train the bot.
-with open('Chats.txt') as file:
-    conv = file.readlines()
-
 #Create instance of ChatBot.
-bot = ChatBot('Kevin Hart')
+bot = ChatBot('Friend')
 
-#Set the trainer for the bot.
+#Set the trainers for the bot.
 trainer = ListTrainer(bot)
-trainer.train(conv)
+corpus_trainer = ChatterBotCorpusTrainer(bot)
 
+current_Minute = datetime.now().minute
+current_Second = datetime.now().second
+
+#Train using a specified corpus.
+corpus_trainer.train('chatterbot.corpus.english')
+
+#Open datasets to train the bot.
+with open('Data/chats.txt', 'r') as file:
+    data = file.readlines()
+    trainer.train(data)
+
+print("[Training Process complete]")
+    
 displayLineSeperator()
 
 #Output the chat start time/date. 
@@ -104,12 +117,12 @@ displayDateTime()
 
 while True:
     #Get user message.
-    request = input("You: ")
+    request = input("Send: ")
 
     #Get response from bot
-    response = bot.get_response(request)
-
+    response = bot.get_response(request)    
+    
     #Print bot's response.
-    print("Bot: ", response)
+    print("Reply From [" + bot.name + "]: " + str(response))
     print("")
     
