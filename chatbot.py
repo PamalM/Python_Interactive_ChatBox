@@ -103,6 +103,7 @@ current_Second = datetime.now().second
 #Train using a specified corpus.
 corpus_trainer.train('chatterbot.corpus.english')
 #Open datasets to train the bot.
+#gets absolute folder path independant of system (i think)
 THIS_FOLDER = os.path.dirname(os.path.abspath(__file__))
 Data_Path = os.path.join(THIS_FOLDER, 'Data/Chats.txt')
 
