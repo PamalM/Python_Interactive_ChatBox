@@ -102,9 +102,11 @@ current_Second = datetime.now().second
 
 #Train using a specified corpus.
 corpus_trainer.train('chatterbot.corpus.english')
-
 #Open datasets to train the bot.
-with open('Data/chats.txt', 'r') as file:
+THIS_FOLDER = os.path.dirname(os.path.abspath(__file__))
+Data_Path = os.path.join(THIS_FOLDER, 'Data/Chats.txt')
+
+with open(Data_Path, 'r') as file:
     data = file.readlines()
     trainer.train(data)
 
