@@ -8,8 +8,10 @@ import re
 import os
 
 #Method fetches and displays the current date and time for chat start/stop points.
-def displayDateTime():
+def displayDateTime(tag):
 
+    #Tag 1 = Start Chat, Tag 2 = End chat.
+    
     #Fetch current month.
     month = datetime.now().month
 
@@ -72,10 +74,16 @@ def displayDateTime():
     else:
         timeOfDay = "PM"
         
-    
-    #Output the current data and time.
-    print("Chat Started on " + months[month] + "/" + str(day) + "/" + str(year) +
-          " @ " + str(formatTime[hour]) + ":" + str(minute) + " " + timeOfDay + "\n")
+    if (tag == 1):
+        #Output the current data and time.
+        print("Chat Started on " + months[month] + "/" + str(day) + "/" + str(year) +
+              " @ " + str(formatTime[hour]) + ":" + str(minute) + " " + timeOfDay + "\n")
+
+    elif (tag == 2):
+                #Output the current data and time.
+        print("Chat Ended on " + months[month] + "/" + str(day) + "/" + str(year) +
+              " @ " + str(formatTime[hour]) + ":" + str(minute) + " " + timeOfDay + "\n")
+
 
 #Method literally just prints a dividor to make output look cleaner.
 def displayLineSeperator():
@@ -113,11 +121,16 @@ print("[Training Process complete]")
 displayLineSeperator()
 
 #Output the chat start time/date. 
-displayDateTime()
+displayDateTime(1)
 
 while True:
     #Get user message.
     request = input("Send: ")
+
+    #Break out of the loop. 
+    if request.lower() == "bye" or request.lower() == "goodbye":
+        print("Reply From[" + bot.name + "]: " + "BYE!")
+        break;
 
     #Get response from bot
     response = bot.get_response(request)    
@@ -125,4 +138,7 @@ while True:
     #Print bot's response.
     print("Reply From [" + bot.name + "]: " + str(response))
     print("")
+
+displayDateTime(2)
+
     
