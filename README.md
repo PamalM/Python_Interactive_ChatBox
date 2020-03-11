@@ -15,7 +15,7 @@ https://drive.google.com/file/d/1U8VQVHLJl651gtyjKrn1gWDnLKBJmbE0/view?usp=shari
 
 -**[Sample_Output](Sample_Output)** contains sample screenshots of the program execution. 
 
--**[Assignment 2.pdf](Assignment 2.pdf)** contains the projects instructions and implementation guidelines. (Provided by professor).
+-**[Assignment 2.pdf]** contains the projects instructions and implementation guidelines. (Provided by professor).
 
 -**[Chatbot.py](chatbot.py)** Project (.py); Execute this file to run the chatbot.
 
