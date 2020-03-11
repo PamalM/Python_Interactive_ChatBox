@@ -7,7 +7,7 @@ import random
 import re
 import os
 
-#Method fetches and displays the current date and time for chat start/stop points.
+#Method fetches/displays the current date and time for chat start/stop points.
 def displayDateTime(tag):
 
     #Tag 1 = Start Chat, Tag 2 = End chat.
